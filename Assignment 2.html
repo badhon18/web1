@@ -1,0 +1,56 @@
+<html>
+	<head>
+	</head>
+	<body style="background-color:33FF9C;">
+	<Center>
+	<h1> Simple converter with Javascript</h1>
+	<p>
+  <label>Feet</label>
+  <input id="inputFeet" type="number" placeholder="Feet"
+  oninput="lengthConverter(this.value)" onchange="lengthConverter(this.value)">
+</p>
+<p>
+  <label>Fahrenheit</label>
+  <input id="inputFahrenheit" type="number" placeholder="Fahrenheit"
+  oninput="temperatureConverter(this.value)"
+  onchange="temperatureConverter(this.value)">
+</p>
+<p>Celsius: <span id="outputCelsius"></span></p>
+<p>cm: <span id="outputMeters"></span></p>
+	
+	<script>
+	function lengthConverter(valNum) {
+  document.getElementById("outputMeters").innerHTML = valNum / 0.0022046;
+}
+function temperatureConverter(valNum) {
+  valNum = parseFloat(valNum);
+  document.getElementById("outputCelsius").innerHTML = (valNum-32) / 1.8;
+}
+</script>
+<b>Miles To Kilometers Converter</b> <br>
+<br>
+
+<table border="0" cellpadding="5" cellspacing="0" style="width: 500px;">
+<tbody>
+  <tr>
+    <td> </td>
+    <td><b>Miles</b>  </td>
+    <td> </td>
+    <td><b>Kilometers</b>  </td>
+  </tr>
+  <tr>
+    <td>miles: </td>
+    <td><input id="txt-miles" size="20" type="text" value="50"/> </td>
+    <td>km: </td>
+    <td><input id="txt-km" size="20" type="text" value=""/> </td>
+  </tr>
+  <tr>
+    <td> </td>
+    <td> <button type="button" onclick="calcMilesFromKilometers();">Calculate Miles</button> </td>
+    <td> </td>
+    <td> <button type="button" onclick="calcKilometersFromMiles();">Calculate Kilometers</button> </td>
+  </tr>
+</table>
+</center>
+	</body>
+</html>
